@@ -17,18 +17,18 @@ npm i
 ```
 
 ## Setup
-
+#### Start server:
 ```bash
 cd api
 node .
 ```
-
+#### Start client:
 Drag and drop the  `app/index.html` into browser.
 
 ## Test
 1. Choose a bot you want to test with. 
 
-#### Go to `app/main.js` and update CHAT_BOT end point
+Go to `app/main.js` and update CHAT_BOT end point
 - Career Coach: 'http://localhost:3000/callCareerCoach'
 - Word Master: 'http://localhost:3000/callWordMaster'
 - Culture Navigator: : 'http://localhost:3000/callCultureNavigator'
@@ -36,10 +36,10 @@ Drag and drop the  `app/index.html` into browser.
 
 2. Update the prompt
 
-#### Go to `api` directory and the js file of the chosen bot API
-a) Update `userInputPromptGenerator` and `promptGenerator`.
-b) Once updated, run `node .` again to restart the server
-c) Refresh browser
+Go to `api` directory and the js file of the chosen bot API
+- Update `userInputPromptGenerator` and `promptGenerator`.
+- Once updated, run `node .` again to restart the server
+- Refresh browser
 
 3. Push the updated prompt
 Push a commit with your changes
