@@ -23,8 +23,8 @@ Try to get the user to talk as much as possible.
 Keep your response concise and limit it to no more than ${WORD_LIMITATION} words.
 `;
 
-
-function generateUserInputPrompt(userInput) {
+// [[ Modify the user input prompt generator ]]
+function userInputPromptGenerator(userInput) {
     const prompt = `
         What would you respond if you are my career coach? My input is:
         ${userInput}
@@ -54,7 +54,7 @@ function promptGenerator(messages) {
     // Generate and push the new user message
     messages.push({
         role: "user",
-        content: generateUserInputPrompt(userInput)
+        content: userInputPromptGenerator(userInput)
     });
 
     return messages;
