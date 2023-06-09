@@ -3,7 +3,6 @@ const sendButton = document.querySelector("#send-btn");
 const chatContainer = document.querySelector(".chat-container");
 
 let userText = null;
-const API_KEY = "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"; // Paste your API key here
 const NODE_JS_URL = 'http://localhost:3000/callAnnie' // [[Replace with the bot you want to test with]]
 const AZURE_FUNC_URL = "http://localhost:7071/api/callAnnie" // [Replace with the Azure Function endpoint you want to test with]
 let USER_INPUT_URL = ""
