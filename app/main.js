@@ -4,7 +4,15 @@ const chatContainer = document.querySelector(".chat-container");
 
 let userText = null;
 const API_KEY = "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"; // Paste your API key here
-const CHAT_BOT = 'http://localhost:3000/callAnnie' // [[Replace with the bot you want to test with]]
+const NODE_JS_URL = 'http://localhost:3000/callAnnie' // [[Replace with the bot you want to test with]]
+const AZURE_FUNC_URL = "http://localhost:7071/api/callAnnie" // [Replace with the Azure Function endpoint you want to test with]
+let USER_INPUT_URL = ""
+
+document.getElementById('submit-button').addEventListener('click', () => {
+    USER_INPUT_URL = document.getElementById('url-input').value;
+    document.getElementById('url-display').textContent = "You are chatting with: " + USER_INPUT_URL;
+    document.getElementById('url-input').value = '';
+});
 
 // Initialize an empty array to hold chat messages
 let chatHistory = [];
@@ -35,7 +43,7 @@ const getChatResponse = async (incomingChatDiv) => {
     addMessageToHistory("user", userText);
     const pElement = document.createElement("p");
     const messages = getChatHistory();
-    fetch(CHAT_BOT, {
+    fetch(USER_INPUT_URL, {
         method: 'POST',
         headers: {
             accept: 'application.json',
